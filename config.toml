@@ -1,4 +1,9 @@
-baseURL = "http://example.org/"
+baseURL = "http://nelou.github.io/tutorial"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "docuapi"
+
+publishDir = "docs"
+
+[params]
+search = true
