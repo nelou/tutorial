@@ -1,11 +1,18 @@
 ---
 title: "First Post"
 date: 2018-01-16T12:39:11+02:00
-draft: true
+draft: false
 ---
 
 * Linux Tutorial
+
 ** bla
+more text
+
 ** test
+
 *** yes
+even more text!
+
 *** no?
+aaand more of that.
