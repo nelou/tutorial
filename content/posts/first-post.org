@@ -399,7 +399,7 @@ In order to be able to edit your site using Org mode, you'll need to rename the 
 
 * Keeping our notes Accessible
 
-Since our tutorial draws to an end an we wanted to cover all bases concerning a fast-paced working experience, we cannot dismiss talking about [[https://github.com/][GitHub]]. GitHub is one of those tools programmers use for their archives. It becomes a necessity since it makes accessing your files easier, and protects them from getting lost. It also makes working in group projects as simpler as possible! Why? Because the code uploaded is accessible by everybody, at anytime, online. That way, you have access to see, download, and edit, code created by other people.
+Since our tutorial draws to an end an we wanted to cover all bases concerning a fast-paced working experience, we cannot dismiss talking about [[https://github.com/][GitHub]]. GitHub is one of those tools programmers use for their archives. It becomes a necessity since *it makes accessing your files easier, and protects them from getting lost*. It also makes working in group projects as simpler as possible! Why? Because the code uploaded is accessible by everybody, at anytime, online. That way, you have access to see, download, and edit, code created by other people.
 
 In a larger sense, GitHub contributes to the efforts made worldwide to distribute the idea of open source software, i.e. whose code is made available for anybody to ameliorate it, thus helps to make crucial progress in computer sciences. We've already had a taste of how powerful of a tool it can be, since we cloned and have been using some pretty neat configuration for emacs made by someone else.
 
