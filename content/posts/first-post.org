@@ -417,9 +417,11 @@ git push origin master
 #+END_SRC
 1. *C-x g*
 2. go to *Unstaged Changes*
-3. *s c c*
-4. name the commit
-5. M-x *magit-push* / *C-c C-c*
+3. *s c c* to commit
+4. name the commit and *C-c C-c* to execute
+5. *Shift-p p* to push
+
+And you're done! You notes are now online and accessible :)
 
 * Finish Line!
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.32.3" />
+	<meta name="generator" content="Hugo 0.32.4" />
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -43,21 +43,487 @@
         <div class="content">
             
     
-        <h1 id="linux-tutorial">Linux Tutorial</h1>
+        <h1 id="introduction">Introduction</h1>
 
-<h2 id="bla">bla</h2>
+<p>Hello there, brave soul! This scary-looking thing here is actually a tutorial, whose aim is in fact to make our everyday lives way easier! How you ask? We shall learn how to install and use the Linux Operating System, as well as some additional tools, the most important of which is Emacs! Too many unknown words? Well, fear not dear friend, for I shall help guide you through this computer-geek dungeon, and thus give you access to the ultimate truth of a fast-paced working environment!</p>
 
-<p>more text</p>
+<p>Sounds nice and all, but... why use Linux instead of another OS (operating system, like Windows, or MacOS)? Well, there are a lot of reasons, but here's a list of the main ones:</p>
 
-<h2 id="test">test</h2>
+<dl>
+<dt>Linux is an Open-source OS</dt>
+<dd>It's completely free, no charges. But, there must be a catch, right? Nope. It has all the features you can need in an operating system and is fully hardware compatible. Isn't that great already?</dd>
+<dt>It's also a very light OS</dt>
+<dd>It works on way less RAM than any other OS, leaving processing power for other applications to use, which makes them run faster. Hence, no high-end system is needed to run it.</dd>
+<dt>Updates are made easy</dt>
+<dd>For the most part, those can run in the background, while you work on more urgent tasks of yours. No reboot needed either!</dd>
+<dt>It has a highly customizable nature</dt>
+<dd>For those of us that enjoy tweaking the looks of our working environment, Linux offers a variety of options to change and adjust to your liking almost every part of its interface.</dd>
+<dt>Secure and private foundation</dt>
+<dd>Most Linux distributions don't collect your data at all. Therefore, you will not be needing additional tools to protect your privacy.</dd>
+<dt>And friendly community support</dt>
+<dd>Facing a problem with your OS? Support is easy to find through a plethora of forums and chat rooms, full of Linux users happy to help you sort things out!</dd>
+</dl>
 
-<h3 id="yes">yes</h3>
+<p>In general, we're talking about a highly reliable OS, that's definitely worth a try. Even most of the Internet giants like Google and Facebook run on Linux. Besides, let's be real here, to whom doesn't the idea of no more "blue screens of death" sound liberating?</p>
 
-<p>even more text!</p>
+<p>So! You were promised speed in your everyday computer usage. Here's how we'll be able to achieve that: by combining Linux with Emacs, a free text editor, that can be used to do way more than just plain text writing!</p>
 
-<h3 id="no">no?</h3>
+<p>Let's get started then, shall we?</p>
 
-<p>aaand more of that.</p>
+<h1 id="getting-started-with-linux">Getting started with Linux</h1>
+
+<h2 id="installation">Installation</h2>
+
+<p>We are going to be installing the Manjaro distribution of Linux, since it provides all the benefits of the Arch operating system, combined with a focus on user-friendliness and accessibility. Its nature makes it suitable for newcomers, as well as experienced Linux users.</p>
+
+<p>First off, we need to download the .iso file from the web. You can find it <a href="https://manjaro.org/get-manjaro/" title="here">here</a>,  under <strong>Manjaro XFCE Edition (17.1.2)</strong>. Choose the one that says <strong>Manjaro XFCE 64-bit</strong> (either via Torrent, or Direct Download).</p>
+
+<p>Once downloaded, we need to burn the .iso file to an empty USB flash drive. That can be easily done by using any piece of software that creates bootable USB flash drives. <a href="https://unetbootin.github.io/" title="UNetbootin">UNetbootin</a> is one of the many utilities you can use to do just that.</p>
+
+<p>When that is done, you have to reboot your system from the flash drive you just burned our .iso file in to, and follow the instructions to install Manjaro into your computer. In case additional help is needed, do not hesitate to have a look <a href="https://wiki.manjaro.org/index.php?title=Main_Page" title="here">here</a>, under the <strong>Installation</strong> headline.</p>
+
+<p>You are ready to go!</p>
+
+<h2 id="terminal-emulator">Terminal Emulator</h2>
+
+<p>In Linux, it is very easy to manage software packages. We will be using the  <a href="https://wiki.manjaro.org/index.php?title=Pacman" title="Pacman">Pacman</a> package manager to install software. To do that, we need to open the <strong>Terminal Emulator</strong> (which you can access through the Manjaro icon on the bottom of the screen), and run this particular command: <strong>sudo pacman -S [software package name]</strong></p>
+
+<pre><code class="language-sh">sudo pacman -S tmux
+sudo pacman -S emacs
+</code></pre>
+
+<p>We'll have to install a couple of packages in our system, <strong>tmux</strong>, a terminal multiplexer that lets us switch easily between several programs in one terminal, and <strong>emacs</strong>, the infamous text editor that we've been talking about earlier.</p>
+
+<p>And here, we have a list of some very basic commands you can use in order to navigate through the terminal:</p>
+
+<ul>
+<li><strong>sudo</strong> : run a command as admin</li>
+<li><strong>sudo pacman -S</strong> : install package (ex: sudo pacman -S chromium - installs the open source browser on which the Chrome browser is based)</li>
+<li><strong>&</strong> : runs an application in the background (try running the command: firefox & - on the terminal and see what happens!)</li>
+<li><strong>pwd</strong> : see which directory you are currently in</li>
+<li><strong>~</strong> : access the home directory</li>
+<li><strong>ls</strong> : list the files inside the directory you are currently in</li>
+<li><strong>cd</strong> : change directory (ex: cd <em>home/user/Documents</em> - gets you to the Documents directory)</li>
+<li><strong>mkdir</strong> : create a directory (ex: mkdir newFolder)</li>
+<li><strong>rmdir</strong> : delete a directory (ex: rmdir newFolder)</li>
+<li><strong>touch</strong> : create a file (ex: touch notes.txt - creates a .txt file named notes)</li>
+<li><strong>rm</strong> : delete a file (ex: rm notes.txt)</li>
+<li><strong>cp</strong> : copy file to another location (ex: cp notes.txt <em>home/user/Documents</em> - copies the .txt file to the Documents directory)</li>
+<li><strong>mv</strong> : move file to another location (ex: mv notes.txt /home/user/Desktop - moves the .txt file to the Desktop directory)</li>
+<li><strong>locate</strong> : search a file (ex: locate notes.txt)</li>
+<li><strong>man</strong> : lets you know how a command is used (ex: man pacman - will show you the user manual for the command pacman)</li>
+</ul>
+
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts</h2>
+
+<p>Since we got to use some commands on the terminal, let me talk to you about one of the general ideas behind working in such an environment. The aim is to get used to working more with the <strong>keyboard</strong>, and less with our mouse. That way, we not only get to work way faster (once accustomed to using commands instead of dragging the mouse on icons in order to do our job), but also work way more efficiently. I know it's hard to get used to not using your mouse, but let me make it a bit easier for you by offering a small list of shortcuts you can begin to experiment with, in order to limit your mouse usage as much as possible for the time being, until you get accustomed enough with the keyboard you won't actually want to use the mouse anymore:</p>
+
+<ul>
+<li><strong>alt tab</strong> : change between application</li>
+<li><strong>alt f4</strong> : close the currently active program</li>
+<li><strong>alt f10</strong> : window at full screen</li>
+<li><strong>Ctrl N</strong> : create new blank document in currently active program</li>
+<li><strong>Ctrl O</strong> : open a file in currently active program</li>
+<li><strong>Ctrl F</strong> : open find window for currently active window</li>
+<li><strong>Ctrl A</strong> : select all text</li>
+<li><strong>Ctrl C</strong> : copy selected text</li>
+<li><strong>Ctrl X</strong> : cut selected text</li>
+<li><strong>Ctrl V</strong> : paste selected text</li>
+<li><strong>Ctrl S</strong> : save current document file</li>
+<li><strong>Ctrl Z</strong> : undo last action</li>
+<li><strong>Ctrl Y</strong> : redo last action</li>
+</ul>
+
+<p>That way, even if you do not feel ready to jump straight into Linux, and need a bit more time to get yourself prepared, you can stick to your old OS and practice using your keyboard a little more than before.</p>
+
+<h1 id="getting-to-know-emacs">Getting to know Emacs</h1>
+
+<h2 id="just-what-exactly-is-emacs">Just what exactly is Emacs?</h2>
+
+<p>Emacs is an extensible, customizable, self-documenting, real-time display editor, with over 10,000 built-in commands whose user interface allows the user to combine into macros to automate work. It's basically like any other text editor you think? Actually, it's just that on the surface, but way way cooler when you get to realize just how many things you can do in it! For instance, apart from editing plain text, you can also manage your emails, your files, your meetings through a built-in journal, open a terminal shell, create music, heck, even build whole sites for the web in seconds!</p>
+
+<p>You can start by launching Emacs, either through the Manjaro menu icon, or by running the command <strong>emacs &</strong> inside the terminal. Remember how we talked about customizability, right? Well, doesn't that overly simple, white interface bores you? How about we get you a bit familiar with the way Emacs does things by trying out a very simple first command that lets us load a theme of our liking? Press <strong>Alt-x</strong>, type <strong>load-theme</strong>, then press Enter. There, you can find a list of some of Emacs default themes. Choose one by using the up and down arrow keys, and press Enter. And voila! You just ran your very first command in Emacs! In case you're interested in more themes, you can find some nice alternatives <a href="https://emacsthemes.com/" title="here">here</a>. Please note that what the theme we just loaded is temporary, and won't be saved. In order to make Emacs remember it, you'll need to write a little bit of code.</p>
+
+<pre><code class="language-sh">cd ~
+mkdir Dev
+cd /home/username/Dev
+git clone https://github.com/iani/emacs-prelude.git
+</code></pre>
+
+<p>An alternative to that can be to clone a ready Emacs configuration using the terminal. And that's exactly what we're going to do. You'll have to visit <a href="https://github.com/iani/emacs-prelude" title="this">this</a> gitHub page, click on the <strong>Clone or download</strong> green button, and copy to clipboard the web URL provided. Once done, open the terminal, and, using the commands provided earlier, get to home directory, create in there a directory where all of your code will be put, access this new directory, and clone the configuration using the URL we just copied.</p>
+
+<p>For more convenience and clarity, you could create another directory inside Dev named emacs, for all the code concerning emacs, and clone the configuration there. That could be a nice small exercise, in order to get you used to the terminal commands.</p>
+
+<p>It is important to note that this particular configuration (provided by Dr Ioannis Zannos, Professor of Computer Music and Interactive Media Arts at the Ionian University) offers some very helpful tweaks that can and will make working in emacs easier and faster, enhancing our experience in a productive way. The whole tutorial is based upon this configuration. Let me show you what I mean: press Ctrl-x and wait for a few seconds. A window will appear listing all the possible key combinations, as well as the commands these combinations give access to. Pretty neat, huh?</p>
+
+<h2 id="a-whole-new-world-of-commands">A whole new world of Commands</h2>
+
+<p>I know that sounds hellishly difficult, but please try to not freak out! Yes, we're talking about a lot of key combinations, and even if they appear to be hard to understand, they are built upon logic, which will make their understanding and memorization way easier. For example, as you'll soon realize, the key used for a specific command is usually the first letter of the word that summarizes what this command does (like in this case: Ctrl-n gets you to the Next line). Another example is that, while Ctrl is usually used for something that has to do with the smaller scale, Alt does the same job in the large scale (Alt-e gets you to the End of the current paragraph, just like Ctrl-e gets you to the End of the current line).</p>
+
+<p>Let's start with the basics. Emacs builds its key combinations upon four modal keys:</p>
+
+<ul>
+<li><strong>C</strong> : control key, ctrl</li>
+<li><strong>M</strong> : meta keys, atl/esc</li>
+<li><strong>H</strong> : hyperkey, fn</li>
+<li><strong>S</strong> : superkey, windowskey or equivalent</li>
+</ul>
+
+<p>We will be using C a lot, and a bit of M. As you noticed, the meta keys are two, escape and alt. I will be using alt for the sake of convenience, but esc is also a viable option.</p>
+
+<p>As we mentioned before, <strong>Emacs works with commands</strong>. We can run the command by name, as we did for load-theme, by using <strong>M-x</strong> and typing the command, or we can use keyboard key combinations to access each one of them. As you can imagine, the second option is way more productive than the first one, so that's what we're gonna use.</p>
+
+<p>Because of the sheer number of commands Emacs has, and since the total amount of two-keys combinations is limited, we'll get to learn about combinations that need three, four, or even more keys to execute a command. Before that, you'll need to remember this golden command that you can use whenever something goes wrong while using very complex key combinations, or when you've simply used a wrong command and want to escape:</p>
+
+<ul>
+<li><strong>C-g</strong> : go, escape! in case you're stuck</li>
+<li><strong>C-M-c</strong> : alternative for C-g</li>
+</ul>
+
+<p>Now that that's settled, here are the most commonly used combinations upon which are based more advanced commands:</p>
+
+<ul>
+<li><strong>C-x</strong> : gives access to the tree of commands that have to do with files, buffers, windows, the emacs application itself, and emacs shells</li>
+<li><strong>C-c</strong> : gives access to the tree of commands that are context related i.e dependent on the currently active mode (for example, shell mode, or SuperCollider mode which is addressed later on) and the position of the cursor inside the buffer</li>
+<li><strong>C-h</strong> : gives access to a tree of help commands (basically gets us out of the mud!)</li>
+</ul>
+
+<h2 id="taking-notes-in-emacs">Taking notes in Emacs</h2>
+
+<p>Let's start with something easy. In order to better understand the commands that are about to follow, we'll be creating an text file to be able to try them out, which can be done by using the terminal (remember that, in order to create a file, you have to get into the directory where you want said file to be situated, and run the command touch; give the new file the name myNotes.org - we'll explain later why .org). To open the said file inside Emacs, we need to use <strong>C-x d</strong> to change our directory. Press Enter, and find where you created your myNotes.org file (if you followed my example on organizing files, your new text file should be in /home/user/Workfiles). Press Enter once again to open it, and you'll be met with an empty file. There, paste some random text from the internet (while copying in Linux is C-c, emacs uses another set of key shortcuts; use C-y for paste), and try out these following commands:</p>
+
+<h3 id="to-move-around-without-needing-your-mouse">To move around without needing your mouse:</h3>
+
+<ul>
+<li><strong>C-+</strong> : (or ctrl + shift + =) zoom <strong>in</strong></li>
+<li><strong>C--</strong> : zoom <strong>out</strong></li>
+<li><strong>C-n</strong> : go to the <strong>next</strong> line</li>
+<li><strong>C-p</strong> : go to the <strong>previous</strong> line</li>
+<li><strong>C-f</strong> : go <strong>forwards</strong> one step (alternative to right arrow)</li>
+<li><strong>C-b</strong> : go <strong>backwards</strong> one step (alternative to left arrow)</li>
+<li><strong>M-f</strong> : go forwards one word</li>
+<li><strong>M-b</strong> : go backwards one word</li>
+<li><strong>C-a</strong> : go to the <strong>beginning</strong> of current line</li>
+<li><strong>C-e</strong> : go to the <strong>end</strong> of current line</li>
+<li><strong>M-a</strong> : go to the beginning of current paragraph</li>
+<li><strong>M-e</strong> : go to the end of current paragraph</li>
+<li><strong>C-l</strong> : align current line with view (in the middle of the window)</li>
+<li><strong>C-s</strong> : jump to a word by <strong>searching</strong> it by its first letter</li>
+<li><strong>C-v</strong> : go to the next page (alternative to the mouse's scroll wheel)</li>
+<li><strong>M-v</strong> : go to the previous page (alternative to the mouse's scroll wheel)</li>
+<li><strong>M-<</strong> : (or alt + shift + ,) go to the beginning of the buffer</li>
+<li><strong>M-></strong> : (or alt + shift + .) go to the end of the buffer</li>
+</ul>
+
+<h3 id="to-edit-text">To edit text:</h3>
+
+<p>Keep in mind that <strong>Enter</strong> and <strong>Backspace</strong> work in the same way as outside Emacs.</p>
+
+<p>Let's say you want to put your randomly pasted text under a headline called "Random Stuff". Try writing it like that, on top of your text: *Random Stuff. You've created a headline. Adding more stars before its title, you can create subsections, in order to arrange your notes in a more neat way.</p>
+
+<ul>
+<li><strong>M-w</strong> : copy (if a text area is not specified, it'll copy the current line)</li>
+<li><strong>C-w</strong> : cut (same goes for cut)</li>
+<li><strong>C-y</strong> : paste</li>
+<li><strong>C-d</strong> : delete one character (from the right of our cursor)</li>
+<li><strong>M-d</strong> : delete one word (from the right of our cursor)</li>
+<li><strong>C-k</strong> : delete, <strong>kill</strong> the rest of the line, what's right from the cursor (it is also copied to clipboard)</li>
+<li><strong>C-/</strong> : undo your last action</li>
+<li><strong>C-x u</strong> : access the undo tree</li>
+<li><strong>C-@</strong> : (or ctrl + shift + 2) : by using the arrows, select a region of text</li>
+<li><strong>C-M-Shift-Arrows</strong> : move said region of text, or current bullet/paragraph if no region is selected</li>
+<li><strong>C-%</strong> : (or ctrl + shift + 5) : replace a word with another in selection</li>
+<li><strong>M-%</strong> : replace a word with another one by one (y for replace, n for next one)</li>
+<li><strong>C-\</strong> : change to Greek language inside emacs</li>
+</ul>
+
+<h3 id="the-prefix-c-u">The prefix C-u</h3>
+
+<p>This prefix C-u is one of those cool little add-ons that Emacs can use, which help us be even more precise in what we do. Here's a couple of examples that should help you understand how to use this prefix:</p>
+
+<ul>
+<li><strong>C-u 5 C-n</strong> : remember how C-n gets us to the next like? Using this prefix and a number 'x' before C-n, we can go 'x' lines forwards, here 5.</li>
+<li><strong>C-u 3 C-d</strong> : using the same logic, we know that C-d deletes one character. Here, it deletes 3 characters at once.</li>
+</ul>
+
+<p>Try using negative numbers, or other commands and see what happens! If you end up messing up your text, don't forget that you can undo your actions by using C-/.</p>
+
+<h2 id="using-org-mode">Using Org Mode</h2>
+
+<p>Great! Now that we know the shortcuts to some pretty basic commands, let's talk about the infamous Org Mode. Remember when we created the file myNotes.org? Well, this is a text file where we can write using Org Mode. That's exactly what we just got a taste of, in the <strong>Some elementary level Commands</strong> section.</p>
+
+<p>Emacs works with Modes. Every buffer (for now, think of the buffer as a window, just like the one you were in when editing your text, and you'll understand later what it is) possesses a major mode, which determines the editing behavior of Emacs while that buffer is current. The mode line, on the bottom of the screen, normally shows the name of the current major mode, in bold letters (if you're still editing your text in Emacs, it should write <strong>Org</strong> there, indicating the mode Emacs is currently in).</p>
+
+<p>Org Mode is for keeping notes, maintaining TODO lists, planning projects, and authoring documents with a fast and effective plain-text system. We solemnly explored its ability to keep notes until now, but if you're interested in examining its other capacities, there's a <a href="https://orgmode.org/org.html" title="manual">manual</a> that could help you do that (with a <a href="https://orgmode.org/guide/" title="compact">compact</a> version available, in case the complete one seems too complicated for now).</p>
+
+<h3 id="additional-headline-commands">Additional headline Commands</h3>
+
+<ul>
+<li><strong>C-Enter</strong> : create new headline at the end of current section at the same level</li>
+<li><strong>M-Enter</strong> : create new headline or bullet at current level at cursor location</li>
+<li><strong>M-left/rightArrow</strong> : alter the place of current section in the hierarchy</li>
+<li><strong>M-Shift-left/rightArrow</strong> : alter the place of current section and its subsections in the hierarchy</li>
+<li><strong>C-c C-n / C-c C-p</strong> : go to next / previous headline</li>
+<li><strong>M-n / M-p</strong> : go to next / previous visible headline</li>
+<li><strong>C-c C-b / C-c C-f</strong> : go to next / previous headline at the same level</li>
+<li><strong>C-c C-j</strong> : jump to headline using search</li>
+<li><strong>C-M-]</strong> : while cursor on headline, toggle access to the information under said headline</li>
+</ul>
+
+<h3 id="using-babel">Using babel</h3>
+
+<p>Let's say you have an .org file with notes about the Python programming language, and need to include both the theoretical aspects, and some code examples. Here's where Babel comes in to save the day. Programming languages can live in blocks inside natural language Org-mode documents. Babel is about letting many different languages work together. In other words, you can have your theory and practice inside the same document, and even edit and run that code in real time, or export it, depending on the language you're using.</p>
+
+<ul>
+<li><strong>type '<' followed by 's' and then press tab</strong> : insert new babel block, and indicate the language you'll be using in said block</li>
+<li><strong>type '#+begin src language' on new line, '#+end src' a couple of lines later</strong> : alternative way to insert a block, with 'language' being the one you want to code with, like python, or ruby for example</li>
+<li><strong>C-c '</strong> : open current babel block on separate window</li>
+<li><strong>while in babel window, C-c C-c</strong> : close babel window and return to main .org file</li>
+</ul>
+
+<h3 id="navigating-in-org-mode">Navigating in Org mode</h3>
+
+<p>As was mentioned before, Emacs can be used to do a variety of things. One of the main reasons to use it though should be <strong>how easy it is to organize and search through one's files</strong>.</p>
+
+<p>Before digging into that further, please allow me to clarify something: In everyday life, you can get to a certain place through many different roads. That rule applies in Emacs as well; you can do something in many different ways. There's no right or wrong, just a more convenient way for each one of us separately. Here, in this tutorial, I will try to present you many different ways to do something you want, but as far as organizing the files in your system goes, I will propose my way of doing so, which I find most easy to navigate through. Personally, I prefer to stick to two folders: one for my notes, with attachments (which I name Workfiles), and one for my code (which I name Dev).</p>
+
+<p>But what exactly are these attachments? Let's say you have an .org file where you keep your notes on theatre studies, and you need to attach the Macbeth play .pdf to your Shakespeare headline, in order to be able to access it immediately from there. That .pdf will become an attachment, and be put in a folder created especially for it. Here's the most important key combination you have to remember, as far as attachments are concerned:</p>
+
+<ul>
+<li><strong>C-c C-a</strong> : displays a menu with a list of commands regarding attachments</li>
+</ul>
+
+<p>There, you can choose to execute one of the following main commands:</p>
+
+<ul>
+<li><strong>a</strong> : select and attach an already existing file</li>
+<li><strong>n</strong> : create a new attachment (ex test.org)</li>
+<li><strong>o</strong> : open the attachment(s)</li>
+<li><strong>f</strong> : open the folder containing the attachments</li>
+</ul>
+
+<p>Once you've created an attachment, you will see that an <strong>ATTACH</strong> will appear next to (or under, depending on the size of your window) your headline. For you to access the properties block (or attachments info), to to said ATTACH, and press <strong>tab</strong>. Same goes for closing the block.</p>
+
+<p>Another way to gain access to that .pdf file could be to create a link with using the documentation of the command org-attach-method:</p>
+
+<ul>
+<li><strong>ln</strong> : create a hard link</li>
+<li><strong>lns</strong> : create a symbol link</li>
+</ul>
+
+<p>Awesome! Now that that's done with, here are some <strong>specific search commands</strong> that lets us navigate through our notes and code files in a very fast and easy way.</p>
+
+<ul>
+<li><strong>C-s</strong> : simple i-search (searches in the visible part of our text)</li>
+<li><strong>C-u C-c C-w</strong> : jump to headline (level 1 only)</li>
+<li><strong>C-c i</strong> : i-menu up to level 2 headlines (headlines only)</li>
+<li><strong>C-c C-j</strong> : searches only in headlines, up to org-goto-maxlevel (headlines only)</li>
+<li><strong>C-c h o</strong> : helm-occur type and search in headlines (text and headlines)</li>
+<li><strong>C-Shift s</strong> : helm-swoop type and search in whole file (text and headlines)</li>
+<li><strong>M-x, icicle-imenu</strong> : displays all headlines, and search by writing</li>
+<li><strong>M-x, icy-mode</strong> : toggle icy-mode, incompatible with org mode (for more information on this one, read the documentation about the command icy-mode itself)</li>
+</ul>
+
+<p>I personally use more C-s, C-c h o, and the icicle-imenu ones, but it is up to you to try them out and decide which suits you better.</p>
+
+<p>There are also commands that allow you to search for files, or words, through entire projects of yours:</p>
+
+<ul>
+<li><strong>C-c p f</strong> : find file in the project you are currently in</li>
+<li><strong>C-c p s s</strong> : silver search, find text in project you are currently in</li>
+<li><strong>C-c p p</strong> : switch project, press <strong>A</strong> for silver search</li>
+</ul>
+
+<p>The last very useful feature I find pretty helpful in terms of navigation is the use of <strong>bookmarks</strong>. By easily creating a bookmark, you can gain fast access to some folders or files you use rather often.</p>
+
+<ul>
+<li><strong>C-x r m</strong> : create bookmark for current location</li>
+<li><strong>C-x j j</strong> : jump to bookmark</li>
+</ul>
+
+<h2 id="other-useful-commands">Other useful Commands</h2>
+
+<h3 id="functions-concerning-buffers-files-and-windows">Functions concerning buffers, files, and windows</h3>
+
+<ul>
+<li><strong>C-x b</strong> : buffer list</li>
+<li><strong>C-c r</strong> : change name of current file and buffer</li>
+<li><strong>C-x d</strong> : change directory</li>
+<li><strong>C-x C-c</strong> : cancel, close Emacs</li>
+</ul>
+
+<ul>
+<li><strong>C-x C-f</strong> : find file open</li>
+<li><strong>C-x C-s</strong> : save file</li>
+<li><strong>C-x C-w</strong> : write file (save as)</li>
+<li><strong>C-x C-d</strong> : see file content</li>
+<li><strong>C-x d</strong> : see and edit file content</li>
+</ul>
+
+<ul>
+<li><strong>C-x o</strong> : go to other window</li>
+<li><strong>C-x 0</strong> : close current window</li>
+<li><strong>C-x 1</strong> : make current window fullscreen</li>
+<li><strong>C-x 2</strong> : split window vertically</li>
+<li><strong>C-x 3</strong> : split window horizontally</li>
+</ul>
+
+<h3 id="dired-mode-commands">Dired Mode Commands</h3>
+
+<ul>
+<li><strong>Shift-c</strong> : copy file to</li>
+<li><strong>Shift-r</strong> : rename file</li>
+<li><strong>Shift-d</strong> : delete file</li>
+<li><strong>Shift-s</strong> : symbolic link to</li>
+<li><strong>Shift-m</strong> : mark files</li>
+<li><strong>Shift-u</strong> : remove marks</li>
+<li><strong>Shift-g</strong> : refresh</li>
+</ul>
+
+<h3 id="some-context-specific-mode-specific-commands">Some Context-specific (Mode-specific) Commands</h3>
+
+<ul>
+<li><strong>C-c</strong> : customize context</li>
+<li><strong>C-c C-c</strong> : context of context</li>
+</ul>
+
+<ul>
+<li><strong>C-x M-m</strong> : open shell window</li>
+<li><strong>C-c C-c</strong> : save changes</li>
+<li><strong>C-x C-q</strong> : edit mode</li>
+</ul>
+
+<h1 id="supercollider-in-emacs">SuperCollider in Emacs</h1>
+
+<h2 id="what-is-supercollider">What is SuperCollider?</h2>
+
+<p>SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. The sclang used is an efficient and expressive dynamic programming language providing a framework for interactive programming and live coding.</p>
+
+<pre><code class="language-sh">sudo pacman -S SuperCollider
+</code></pre>
+
+<p>Emacs has the ability to open a buffer on SuperCollider mode, allowing you to work within its environment without needing any other application working simultaneously. To do that, we need to already have SuperCollider in our system, so we'll need to download and install it using Pacman.</p>
+
+<pre><code>git clone https://github.com/iani/sc-hacks.git
+</code></pre>
+
+<p>Dr Zannos we mentioned before provides a personal library of SC code examples named <a href="https://github.com/iani/sc-hacks" title="sc-hacks">sc-hacks</a>. I would suggest to clone its contents to your Dev directory if desired, since it proposes some interesting techniques to work with.</p>
+
+<p>In case you're new to SuperCollider, and are interested in learning how to code in sclang, you can access CCRMA's (Center for Computer Research in Music and Acoustics) free <a href="https://ccrma.stanford.edu/~ruviaro/texts/A_Gentle_Introduction_To_SuperCollider.pdf" title="tutorial">tutorial</a>. You could also check out and try to understand, or even experiment with other people's code that you can find in <a href="https://sccode.org/" title="sccode">sccode</a>.</p>
+
+<h2 id="basic-commands-of-supercollider-in-emacs">Basic Commands of SuperCollider in Emacs</h2>
+
+<p>When in SC mode, just like with any other mode in Emacs, we have to use <strong>context-specific commands</strong>.</p>
+
+<ul>
+<li><strong>C-c M-s</strong> : access SuperCollider mode</li>
+<li><strong>C-c</strong> : everything that has to do with SC mode, while in it</li>
+<li><strong>C-c Shift-w</strong> : open a Workspace</li>
+<li><strong>C-c C-p b</strong> : boot the server</li>
+<li><strong>C-c C-p q</strong> : quit</li>
+<li><strong>C-c C-c</strong> : play our function</li>
+<li><strong>C-c C-s</strong> : stop</li>
+</ul>
+
+<p>A very helpful feature in SC mode is that of <strong>snipets //:</strong>, since we can use them as blocks of code we can easily jump to and off, and also run.</p>
+
+<ul>
+<li><strong>M-n</strong> : jump to next snipet</li>
+<li><strong>M-p</strong> : jump to previous snipet</li>
+<li><strong>C-M-x</strong> : run current snipet</li>
+</ul>
+
+<p>Remember that we can also use <strong>babel</strong> inside any .org file to create a block of code using sclang.</p>
+
+<h2 id="example-of-sc-code-in-emacs">Example of SC Code in Emacs</h2>
+
+<p>Here's a very basic example of a function that generates a looping sound in sclang.</p>
+
+<pre><code class="language-sclang">//:
+{
+	var synths, amp, amp1;
+	amp = Pseq([0.01!5, 0.1].flat, inf).asStream;
+	loop {
+		amp1 = amp.next;
+		synths = {{SinOsc.ar(400 rrand: 4000, 0, amp1)}.play} ! 10;
+		0.05.wait;
+		synths do: _.free;
+		0.05.wait;
+	}
+}.fork
+//:
+</code></pre>
+
+<h1 id="hugo-in-emacs">Hugo in Emacs</h1>
+
+<h2 id="what-is-hugo">What is Hugo?</h2>
+
+<pre><code class="language-sh">sudo pacman -S hugo
+</code></pre>
+
+<p>Hugo is a <strong>flat file website generation system</strong>. That means that it does not use a database. Instead, it generates plain html files. Flat file websites have the advantage of being safer (because databases can't be hacked) and faster (because there's no need to access a database to get the data). Hugo uses markdown and org-mode as source text format. An advantage of using a simple markup language as source is that you can always regenerate the site from the source, and you can use the source also for other types of exports (pdf, etc.). That's exactly how this tutorial you're reading was created! We'll need to install it in our system using Pacman (opt pygmentize).</p>
+
+<pre><code class="language-sh">sudo pacman -S go
+</code></pre>
+
+<p>Hugo is a program written in go language (<a href="https://golang.org/" title="golang">golang</a>), a programming language designed by Google that is object oriented, fast, and geared for concurrent online systems. Go takes a collection of source text files written in markdown or org-mode and translates them to html. As a result, hugo produces a website consisting of html files, linked to css and javascript files, which define the style of the site. In short, go is an open source programming language that makes it easy to build simple, reliable, and efficient software. We'll need to install go as well, in order to be able to use it.</p>
+
+<p>In order to make sure that everything works just fine with Go, you can open a babel block inside your notes and try out this <a href="https://wiki.archlinux.org/index.php/Go#Test_your_installation" title="test your installation tutorial">test your installation tutorial</a> provided by the Arch Linux Wiki.</p>
+
+<h2 id="create-your-first-site">Create your first site</h2>
+
+<p>Once you're sure everything is ready, go try to create your first web site using hugo's <a href="https://gohugo.io/getting-started/quick-start/" title="quick-start guide">quick-start guide</a>.</p>
+
+<h2 id="using-the-docuapi-theme">Using the DocuAPI theme</h2>
+
+<pre><code>git submodule add https://github.com/bep/docuapi.git themes/docuapi
+echo 'theme = &quot;docuapi&quot;' &gt;&gt; config.toml
+echo 'baseURL = &quot;http://yourdomain.com&quot;' &gt;&gt; config.toml
+echo '[params]' &gt;&gt; config.toml
+echo 'search = true' &gt;&gt; config.toml
+</code></pre>
+
+<p>You can choose from a variety of hugo <a href="https://themes.gohugo.io/" title="themes">themes</a> in order to create a website that suits your personal needs. In that case, you'll need to modify the line of code concerning the theme. You could use DocuAPI, which is the one I've used for this website, since it's the only one where everything is written in a single .org file (other themes need different .org files for every post inside their site). For DocuAPI to work properly, you'll need to rename theme.toml to config.toml, and add using the terminal the theme, baseURL, and search parameters.</p>
+
+<pre><code class="language-sh">hugo server -D
+hugo
+</code></pre>
+
+<p>In order to be able to edit your site using Org mode, you'll need to rename the post you created to something.org. You can also run the command <strong>hugo server -D</strong> into shell to see your site being created step by step, simply by refreshing the page once you introduce a new element into the .org file. When done with creating your site, you can export it to html by simply running the command <strong>hugo</strong> in the shell. But be careful! If you want it to appear as you created it to be published in your domain online, you need to change the <strong>draft</strong> to <strong>false</strong> inside your .org post before exporting it. Else, you'll only be able to see it while in localhost.</p>
+
+<h1 id="keeping-our-notes-accessible">Keeping our notes Accessible</h1>
+
+<p>Since our tutorial draws to an end an we wanted to cover all bases concerning a fast-paced working experience, we cannot dismiss talking about <a href="https://github.com/" title="GitHub">GitHub</a>. GitHub is one of those tools programmers use for their archives. It becomes a necessity since it makes accessing your files easier, and protects them from getting lost. It also makes working in group projects as simpler as possible! Why? Because the code uploaded is accessible by everybody, at anytime, online. That way, you have access to see, download, and edit, code created by other people.</p>
+
+<p>In a larger sense, GitHub contributes to the efforts made worldwide to distribute the idea of open source software, i.e. whose code is made available for anybody to ameliorate it, thus helps to make crucial progress in computer sciences. We've already had a taste of how powerful of a tool it can be, since we cloned and have been using some pretty neat configuration for emacs made by someone else.</p>
+
+<pre><code class="language-sh">xclip -sel clip &lt; ~/path/to/file.txt
+</code></pre>
+
+<p>Emacs can be used to easily upload our files in a matter of seconds. First, in order to connect to the GitHib server, you'll need to create an account, go to settings, and generate an SSH key (<em>home/user</em>.ssh/id_rsa).</p>
+
+<p>Now you're ready to make your first commit and push it online. You can do that either on the shell, or emacs. While inside your .org file in emacs, do the following:</p>
+
+<pre><code class="language-sh">git add .
+git commit -am &quot;message&quot;
+git push origin master
+</code></pre>
+
+<ol>
+<li><strong>C-x g</strong></li>
+<li>go to <strong>Unstaged Changes</strong></li>
+<li><strong>s c c</strong> to commit</li>
+<li>name the commit and <strong>C-c C-c</strong> to execute</li>
+<li><strong>Shift-p p</strong> to push</li>
+</ol>
+
+<p>And you're done! You notes are now online and accessible :)</p>
+
+<h1 id="finish-line">Finish Line!</h1>
+
+<p>And done! You've successfully completed the computer-geek dungeon! I sincerely thank you for your attention.</p>
+
+<p>Until next time, brave adventurer!</p>
 
     
 
