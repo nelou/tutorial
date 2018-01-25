@@ -367,7 +367,7 @@ Here's a very basic example of a function that generates a looping sound in scla
 #+BEGIN_SRC sh
 sudo pacman -S hugo
 #+END_SRC
-Hugo is a *flat-file website generation system*. That means that it does not use a database. Instead, it generates plain html files. Flat-file websites have the advantage of being safer (since databases are prone to hacking attempts) and faster (because there's no need to access a database to get the data needed). Hugo uses markdown and org-mode as source text format. An advantage of using a simple markup language as source is that you can always regenerate the site from the source, and you can use the source also for other types of exports (pdf, etc.). That's exactly how this tutorial you're reading was created! We'll need to install it in our system using Pacman (opt pygmentize).
+Hugo is a *flat-file website generation system*. That means that it does not use a database. Instead, it generates plain html files. Flat-file websites have the advantage of being safer (since databases are prone to hacking attempts) and faster (because there's no need to access a database to get the data). Hugo uses markdown and org-mode as source text format. An advantage of using a simple markup language as source is that you can always regenerate the site from the source, and you can use the source also for other types of exports (pdf, etc.). That's exactly how this tutorial you're reading was created! We'll need to install it in our system using Pacman (opt pygmentize).
 
 #+BEGIN_SRC sh
 sudo pacman -S go
