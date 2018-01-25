@@ -291,7 +291,7 @@ The last very useful feature I find pretty helpful in terms of navigation is the
 + *Shift-s* : symbolic link to
 + *Shift-m* : mark files
 + *Shift-u* : remove marks
-+ *Shift-g* : refresh
++ *g* : refresh
 
 *** Some Context-specific (Mode-specific) Commands
 
