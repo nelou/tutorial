@@ -419,7 +419,7 @@ git push origin master
 2. go to *Unstaged Changes*
 3. *s c c*
 4. name the commit
-5. M-x *magit-push*
+5. M-x *magit-push* / *C-c C-c*
 
 * Finish Line!
 
