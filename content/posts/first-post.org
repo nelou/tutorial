@@ -187,7 +187,7 @@ Try using negative numbers, or other commands and see what happens! If you end u
 
 ** Using Org Mode
 
-Great! Now that we know the shortcuts to some pretty basic commands, let's talk about the infamous Org Mode. Remember when we created the file myNotes.org? Well, this is a text file where we can write using Org Mode. That's exactly what we just got a taste of, in the *Some elementary level Commands* section.
+Great! Now that we know the shortcuts to some pretty basic commands, let's talk about the infamous Org Mode. Remember when we created the file myNotes.org? Well, this is a text file where we can write using Org Mode. That's exactly what we just got a taste of, in the *Taking notes in Emacs* section.
 
 Emacs works with Modes. Every buffer (for now, think of the buffer as a window, just like the one you were in when editing your text, and you'll understand later what it is) possesses a major mode, which determines the editing behavior of Emacs while that buffer is current. The mode line, on the bottom of the screen, normally shows the name of the current major mode, in bold letters (if you're still editing your text in Emacs, it should write *Org* there, indicating the mode Emacs is currently in).
 
